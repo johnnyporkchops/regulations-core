@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.options import (normalize_together) 
 from mptt.models import MPTTModel, TreeForeignKey
 
 from regcore.fields import CompressedJSONField
@@ -20,6 +19,7 @@ class Document(MPTTModel):
     class Meta:
         index_together = (('doc_type', 'version', 'label_string'),)
         unique_together = (('doc_type', 'version', 'label_string'),)
+
 
 class Layer(models.Model):
     name = models.SlugField(max_length=20)
