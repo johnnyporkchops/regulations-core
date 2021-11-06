@@ -19,7 +19,7 @@ class Document(MPTTModel):
 
     class Meta:
 
-        index_together = (('doc_type', 'version', 'label_string'),)
+        index_together = {{'doc_type', 'version', 'label_string'},}
         index_together = normalize_together(index_together)
         unique_together = (('doc_type', 'version', 'label_string'),)
         #unique_together = normalize_together(unique_together)
