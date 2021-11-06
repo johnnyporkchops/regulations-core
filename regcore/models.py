@@ -18,13 +18,11 @@ class Document(MPTTModel):
     root = models.BooleanField(default=False, db_index=True)
 
     class Meta:
-        indexes = [
-            models.Index(fields=['doc_type', 'version', 'label_string' ]),
-        ]
+
         #index_together = (('doc_type', 'version', 'label_string'),)
-        # index_together = normalize_together(index_together)
-        unique_together = (('doc_type', 'version', 'label_string'),)
-        # unique_together = normalize_together(unique_together)
+        index_together = normalize_together(index_together)
+        #unique_together = (('doc_type', 'version', 'label_string'),)
+        unique_together = normalize_together(unique_together)
         
         #index_together = normalize_together((('doc_type', 'version', 'label_string'),))
         #index_t gether = normalize_together(index_together)
@@ -45,6 +43,7 @@ class Layer(models.Model):
 
     class Meta:
         index_together = (('name', 'doc_type', 'doc_id'),)
+        index_together = normalize_together(index_together)
         unique_together = index_together
 
 
@@ -63,6 +62,7 @@ class NoticeCFRPart(models.Model):
 
     class Meta:
         index_together = (('notice', 'cfr_part'),)
+        index_together = normalize_together(index_together)
         unique_together = (('notice', 'cfr_part'),)
 
 
@@ -74,4 +74,5 @@ class Diff(models.Model):
 
     class Meta:
         index_together = (('label', 'old_version', 'new_version'),)
+        index_together = normalize_together(index_together)
         unique_together = (('label', 'old_version', 'new_version'),)
