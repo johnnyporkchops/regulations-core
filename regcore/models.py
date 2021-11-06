@@ -19,6 +19,7 @@ class Document(MPTTModel):
     class Meta:
         index_together = (('doc_type', 'version', 'label_string'),)
         unique_together = (('doc_type', 'version', 'label_string'),)
+        unique_together = normalize_together(unique_together)
 
 
 class Layer(models.Model):
