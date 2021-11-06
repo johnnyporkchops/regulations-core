@@ -14,6 +14,9 @@ def rebuild(apps, schema_editor):
     # Bind manager
     manager = mptt.managers.TreeManager()
     manager.model = Regulation
+    def convert(set):
+            return tuple(i for i in set)
+    cls._meta.index_together = convert(cls._meta.index_together) + (index_together,)
     mptt.register(Regulation)
     manager.contribute_to_class(Regulation, 'objects')
 
