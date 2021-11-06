@@ -23,9 +23,9 @@ class Document(MPTTModel):
         # unique_together = (('doc_type', 'version', 'label_string'),)
         # unique_together = normalize_together(unique_together)
         
-        index_together = normalize_together(('doc_type', 'version', 'label_string'),)
+        index_together = normalize_together((('doc_type', 'version', 'label_string'),))
         #index_t gether = normalize_together(index_together)
-        unique_together = normalize_together(('doc_type', 'version', 'label_string'),)
+        unique_together = normalize_together((('doc_type', 'version', 'label_string'),))
         #unique_together = normalize_together(unique_together)
 
 
