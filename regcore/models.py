@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.options import Options
+from django.db.models.options import (normalize_together) 
 from mptt.models import MPTTModel, TreeForeignKey
 
 from regcore.fields import CompressedJSONField
