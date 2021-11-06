@@ -32,7 +32,7 @@ class Layer(models.Model):
     doc_id = models.SlugField(max_length=250)
 
     class Meta:
-        index_together = [('name', 'doc_type', 'doc_id'),]
+        index_together = (('name', 'doc_type', 'doc_id'),)
         unique_together = index_together
 
 
