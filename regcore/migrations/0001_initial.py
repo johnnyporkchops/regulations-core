@@ -70,28 +70,28 @@ class Migration(migrations.Migration):
         #     name='regulation',
         #     index_together=set([('version', 'label_string')]),
         # ),
-        # migrations.AlterUniqueTogether(
-        #     name='layer',
-        #     unique_together=set([('version', 'name', 'label')]),
-        # ),
-        # migrations.AlterIndexTogether(
-        #     name='layer',
-        #     index_together=set([('version', 'name', 'label')]),
-        # ),
-        # migrations.AlterUniqueTogether(
-        #     name='diff',
-        #     unique_together=set([('label', 'old_version', 'new_version')]),
-        # ),
-        # migrations.AlterIndexTogether(
-        #     name='diff',
-        #     index_together=set([('label', 'old_version', 'new_version')]),
-        # ),
-        # migrations.AlterUniqueTogether(
-        #     name='noticecfrpart',
-        #     unique_together=set([('notice', 'cfr_part')]),
-        # ),
-        # migrations.AlterIndexTogether(
-        #     name='noticecfrpart',
-        #     index_together=set([('notice', 'cfr_part')]),
-        # ),
+        migrations.AlterUniqueTogether(
+            name='layer',
+            unique_together=set([('version', 'name', 'label')]),
+        ),
+        migrations.AlterIndexTogether(
+            name='layer',
+            index_together=set([('version', 'name', 'label')]),
+        ),
+        migrations.AlterUniqueTogether(
+            name='diff',
+            unique_together=set([('label', 'old_version', 'new_version')]),
+        ),
+        migrations.AlterIndexTogether(
+            name='diff',
+            index_together=set([('label', 'old_version', 'new_version')]),
+        ),
+        migrations.AlterUniqueTogether(
+            name='noticecfrpart',
+            unique_together=set([('notice', 'cfr_part')]),
+        ),
+        migrations.AlterIndexTogether(
+            name='noticecfrpart',
+            index_together=set([('notice', 'cfr_part')]),
+        ),
     ]
