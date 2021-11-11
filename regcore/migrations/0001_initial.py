@@ -62,10 +62,10 @@ class Migration(migrations.Migration):
                 ('root', models.BooleanField(default=False, db_index=True)),
             ],
         ),
-        # migrations.AlterUniqueTogether(
-        #     name='regulation',
-        #     unique_together=set([('version', 'label_string')]),
-        # ),
+        migrations.AlterUniqueTogether(
+            name='regulation',
+            unique_together=set([('version', 'label_string')]),
+        ),
         # migrations.AlterIndexTogether(
         #     name='regulation',
         #     index_together=set([('version', 'label_string')]),
