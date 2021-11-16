@@ -9,5 +9,9 @@ class Migration(migrations.Migration):
         ('regcore', '0015_auto_20200413_1639'),
     ]
 
-     operations = [
+    operations = [
+        migrations.AlterIndexTogether(
+            name='document',
+            index_together={('doc_type', 'version', 'label_string')},
+        ),
     ]
