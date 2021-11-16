@@ -10,8 +10,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterIndexTogether(
-            name='document',
-            index_together={('doc_type', 'version', 'label_string')},
-        )
+        # migrations.AlterIndexTogether(
+        #     name='document',
+        #     index_together={('doc_type', 'version', 'label_string')},
+        # )
     ]
