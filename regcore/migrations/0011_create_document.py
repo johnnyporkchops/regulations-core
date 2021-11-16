@@ -34,8 +34,12 @@ class Migration(migrations.Migration):
             name='document',
             unique_together=set([('doc_type', 'version', 'label_string')]),
         ),
-        #migrations.AlterIndexTogether(
-        #     name='document',
-        #     index_together=set([('doc_type', 'version', 'label_string')]),
-        # ),
+        migrations.AlterIndexTogether(
+            name='document',
+            index_together=set([('doc_type', 'version', 'label_string')]),
+        ),
+                migrations.AlterIndexTogether(
+            name='document',
+            index_together={('doc_type', 'version', 'label_string')},
+        ),
     ]
